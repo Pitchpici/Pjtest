@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Setup Page</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js">
+
+    </script>
+  </head>
+
+
+  <body>
+
+    <nav>
+        <div class="nav-wrapper deep-orange darken-1">
+
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+              <li><a href="donate.html">Donate</a></li>
+              <li><a href="index.html">Authentication (Index)</a></li>
+              <li><a href="angels.html">Angels</a></li>
+              <li><a href="TermsConditions.html">Terms&Conditions</a></li>
+
+          </ul>
+
+        </div>
+    </nav>
+
+    <header class="deep-orange darken-1"> 
+        <div class="container">
+              <h2 class="display-3 center-align"> KarmaFoodBank </h2>
+        </div>
+    </header> 
+
+    <main>
+      <div class="section white">
+
+
+        <div class="container">
+          <div class="card">
+
+              <div class="card-title center-align"><h4>Setup Your Account</h4> </div>
+
+              <div class="card-content center-align"><h5>Are you a donor or a messenger?</h5>
+
+                  <br>
+
+                  <div id="buttongroup">
+
+                      <button class="btn waves-effect waves-light" type="submit" name="action" id="donor"><i class="material-icons left">restaurant</i>Donor</button>
+
+                      <button class="btn waves-effect waves-light" type="submit" name="action" id="requester"> <i class="material-icons left">sentiment_very_satisfied</i>Messenger</button>
+
+                  </div>
+                
+                  <br />
+
+                    <form class="card-content" id="organization-form" hidden>
+                      Organization Name: <input type="text" id="organization" name="organization">
+                      <br></br>
+                      Address: <input type="text" id="organization-address" name="organization-address">
+                      <br></br>
+                    </form>
+
+                    <form  class="card-content" id="restaurant-form" hidden>
+                      Restaurant: <input type="text" id="restaurant" name="restaurant">
+                      <br></br>
+                      Pickup Address: <input type="text" id="restaurant-address" name="restaurant-address">
+                      <br></br>
+                    </form>
+
+                   <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit</button>
+
+              </div>
+
+          </div>
+        </div>
+
+    </div> <!-- close section -->
+  </main>      
+
+</body>
+</html>

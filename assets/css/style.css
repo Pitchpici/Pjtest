@@ -1,0 +1,81 @@
+
+.jumbotron {
+    		background-color: rgba(255, 0, 0, 0.5) !important;
+            border: none;
+            margin-bottom: -60px;
+            color: black;
+            text-shadow: -1px 1px white, 0 1px white; }
+
+
+
+body {
+    color: black;
+}  
+.container {
+   /* width: 75%;*/
+    border: 1px solid black;
+    margin: 30px 0px;
+}  
+#authBox {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+
+}    
+.flip {
+    display: inline-block;
+    transform: rotateY(180deg);
+}
+#logoText {
+    font-size: 500%;
+    padding: 10px;
+    margin-top: -10px;
+    position: relative;
+    left: 50px;
+}
+.flip-container {
+    perspective: 1000px;
+}
+    /* flip the pane when hovered */
+    .flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+.flip-container, .front, .back {
+    width: 320px;
+    height: -10px;
+}
+
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
+}
+
+.parallax-container {
+      height: 200px;
+    }
+
