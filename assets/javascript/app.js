@@ -13,6 +13,11 @@ $(document).ready(function() {
   };
   firebase.initializeApp(config);
 
+  var provider = new firebase.auth.GoogleAuthProvider();
+  var provider = new firebase.auth.FacebookAuthProvider();
+  var provider = new firebase.auth.TwitterAuthProvider();
+  var provider = new firebase.auth.GithubAuthProvider();
+
   //START AUTHENTICATION
 
   var currentUid = null;
@@ -39,6 +44,7 @@ $(document).ready(function() {
         signInSuccessUrl: 'https://pitchpici.github.io/Pjtest/setuppage.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
+
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
           firebase.auth.FacebookAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID
