@@ -13,10 +13,6 @@ $(document).ready(function() {
   };
   firebase.initializeApp(config);
 
-  var provider = new firebase.auth.GoogleAuthProvider();
-  var provider = new firebase.auth.FacebookAuthProvider();
-  var provider = new firebase.auth.TwitterAuthProvider();
-  var provider = new firebase.auth.GithubAuthProvider();
 
   //START AUTHENTICATION
 
