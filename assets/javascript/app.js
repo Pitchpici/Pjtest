@@ -2,16 +2,15 @@ $(document).ready(function() {
   //Materialize CSS parralax function
   // $('.parallax').parallax();
 
-  // Initialize Firebase
+ // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBR4mFvJiYUIQDIVoDzKCWZyxyeJ-C5rCw",
-    authDomain: "fir-project-ca268.firebaseapp.com",
-    databaseURL: "https://fir-project-ca268.firebaseio.com",
-    projectId: "fir-project-ca268",
+    apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
+    authDomain: "pjtest-faa85.firebaseapp.com",
+    databaseURL: "https://pjtest-faa85.firebaseio.com",
+    projectId: "pjtest-faa85",
     storageBucket: "",
-    messagingSenderId: "60944439745"
+    messagingSenderId: "755306943543"
   };
-
   firebase.initializeApp(config);
 
   //START AUTHENTICATION
@@ -37,7 +36,7 @@ $(document).ready(function() {
 
       // FirebaseUI config.
       var uiConfig = {
-        signInSuccessUrl: 'https://joycurthblisso.github.io/GroupProject-1/setuppage.html',
+        signInSuccessUrl: 'https://pitchpici.github.io/Pjtest/setuppage.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -45,8 +44,13 @@ $(document).ready(function() {
           firebase.auth.EmailAuthProvider.PROVIDER_ID
         ],
         // Terms of service url.
-        tosUrl: 'https://clarkwmcd.github.io/'
+        tosUrl: 'https://Pitchpici.github.io/'
       };
+
+      FB.getLoginStatus(function(response) {
+         statusChangeCallback(response);
+         console.log(response);
+      });
 
       // Initialize the FirebaseUI Widget using Firebase.
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -107,7 +111,7 @@ $(document).ready(function() {
   //END SETUP PAGE JS
 
   function goToHome() {
-    location.href = "https://joycurthblisso.github.io/GroupProject-1/Donate.html"
+    location.href = "https://pitchpici.github.io/Pjtest/Donate.html"
   }
 
 
