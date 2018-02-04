@@ -40,7 +40,6 @@ $(document).ready(function() {
         signInSuccessUrl: 'https://pitchpici.github.io/Pjtest/setuppage.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
-
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
           firebase.auth.FacebookAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID
