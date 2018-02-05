@@ -14,9 +14,16 @@ $(document).ready(function() {
 
   firebase.initializeApp(config);
 
+  var database = firebase.database();
+
+  var usersRef = database.ref("users");
+
+
   //START AUTHENTICATION
 
   var currentUid = null;
+  var usersArray=[];
+  database.put(usersArray);
 
   firebase.auth().onAuthStateChanged(function(user) {
     // onAuthStateChanged listener triggers every time the user ID token changes.
@@ -31,6 +38,16 @@ $(document).ready(function() {
       console.log(user);
       console.log(currentUid);
 
+      if (usersArray.indexOf(currentUid) < 0){
+        usersArray.push(currentUid);
+
+      }
+
+      else {
+        location.href = "https://Pitchpici.github.io/Pjtest/Donate.html" //user with an existing profile
+      }
+
+      console.log(usersArray);
 
     } else {
       // Sign out operation. Reset the current user UID.
@@ -103,13 +120,13 @@ $(document).ready(function() {
     var name = $("#restaurant").val();
     var address = $("#restaurant-address").val();
     var database = firebase.database()
-    database.ref().push(name);
+    database.ref("user").push(name).push(address);
   });
 
   //END SETUP PAGE JS
 
   function goToHome() {
-    location.href = "https://Pitchpici.github.io/Pjtest/Donate.html"
+    location.href = "https://Pitchpici.github.io/Pjtest/Donate.html";
   }
 
 
