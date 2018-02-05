@@ -37,7 +37,7 @@ $(document).ready(function() {
 
       // FirebaseUI config.
       var uiConfig = {
-        signInSuccessUrl: 'https://pitchpici.github.io/Pjtest/setuppage.html',
+        signInSuccessUrl: 'https://pitchpici.github.io/Pjtesttest/setuppage.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -45,9 +45,8 @@ $(document).ready(function() {
           firebase.auth.EmailAuthProvider.PROVIDER_ID
         ],
         // Terms of service url.
-        tosUrl: 'https://Pitchpici.github.io/'
+        tosUrl: 'https://pitchpici.github.io/'
       };
-
 
       // Initialize the FirebaseUI Widget using Firebase.
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
