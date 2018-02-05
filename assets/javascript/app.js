@@ -28,6 +28,8 @@ $(document).ready(function() {
       // Update the current user UID.
 
       currentUid = user.uid;
+      console.log(user);
+      console.log(currentUid);
 
 
     } else {
