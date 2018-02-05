@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   var currentUid = null;
   var usersArray=[];
-  database.put(usersArray);
+  database.push(usersArray);
 
   firebase.auth().onAuthStateChanged(function(user) {
     // onAuthStateChanged listener triggers every time the user ID token changes.
