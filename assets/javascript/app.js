@@ -2,17 +2,17 @@ $(document).ready(function() {
   //Materialize CSS parralax function
   // $('.parallax').parallax();
 
- // Initialize Firebase
-  var config = {
+  // Initialize Firebase
+   var config = {
     apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
     authDomain: "pjtest-faa85.firebaseapp.com",
     databaseURL: "https://pjtest-faa85.firebaseio.com",
     projectId: "pjtest-faa85",
-    storageBucket: "",
+    storageBucket: "pjtest-faa85.appspot.com",
     messagingSenderId: "755306943543"
   };
-  firebase.initializeApp(config);
 
+  firebase.initializeApp(config);
 
   //START AUTHENTICATION
 
@@ -37,7 +37,7 @@ $(document).ready(function() {
 
       // FirebaseUI config.
       var uiConfig = {
-        signInSuccessUrl: 'https://pitchpici.github.io/Pjtesttest/setuppage.html',
+        signInSuccessUrl: 'https://Pitchpici.github.io/Pjtest/setuppage.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -45,7 +45,7 @@ $(document).ready(function() {
           firebase.auth.EmailAuthProvider.PROVIDER_ID
         ],
         // Terms of service url.
-        tosUrl: 'https://pitchpici.github.io/'
+        tosUrl: 'https://Pitchpici.github.io/'
       };
 
       // Initialize the FirebaseUI Widget using Firebase.
@@ -107,7 +107,7 @@ $(document).ready(function() {
   //END SETUP PAGE JS
 
   function goToHome() {
-    location.href = "https://pitchpici.github.io/Pjtest/Donate.html"
+    location.href = "https://Pitchpici.github.io/Pjtest/Donate.html"
   }
 
 
