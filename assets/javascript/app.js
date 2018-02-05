@@ -48,10 +48,6 @@ $(document).ready(function() {
         tosUrl: 'https://Pitchpici.github.io/'
       };
 
-      FB.getLoginStatus(function(response) {
-         statusChangeCallback(response);
-         console.log(response);
-      });
 
       // Initialize the FirebaseUI Widget using Firebase.
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
