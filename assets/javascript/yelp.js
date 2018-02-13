@@ -23,7 +23,7 @@ $(document).ready(function() {
                   limit: 5
       },
       headers: {
-        "Authorization": apiKeyYelp;
+        "Authorization": apiKeyYelp
       }
 
     }).then(function(response) {
