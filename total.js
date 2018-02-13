@@ -122,13 +122,13 @@ $(document).ready(function() {
 
       console.log(profile);
 
-      firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
-        location.href="Donate.html";
-      });
+        firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
+          location.href="Donate.html";
+        });
 
-    });
+    }); // submit org button
 
-  });
+
 
 //yelp api
 var yelpObject;
@@ -335,5 +335,4 @@ var yelpObject;
 }); //close submit button
 
 //button
-
-
+});
