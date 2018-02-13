@@ -40,6 +40,7 @@ $(document).ready(function() {
 
       if (usersArray.indexOf(currentUid) < 0){
         usersArray.push(currentUid);
+        return currentUid;
 
       }
 
