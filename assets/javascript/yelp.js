@@ -65,38 +65,36 @@ $(document).on("click", ".selectName", function(event) {
     event.preventDefault();
 
 //get user info???
-     var user = firebase.auth().currentUser;
-     console.log("this should be the user auth object: " + user);
+       var user = firebase.auth().currentUser;
+       console.log("this should be the user auth object: " + user);
 
-    var uid, email;
+      var uid, email;
 
-      if (user != null) {
-        uid = user.uid;
-        email = user.email;
-      }
-      else {
-        console.log("You are not signed in!");
-      }  //
+        if (user != null) {
+          uid = user.uid;
+          email = user.email;
+        }
+        else {
+          console.log("You are not signed in!");
+        }  //
 
 
 
-    var selectedDonor = $(this);
-    console.log(selectedDonor.data('name'));
+        var selectedDonor = $(this);
+        console.log(selectedDonor.data('name'));
 
-    event.preventDefault();
-
-    var profile = {
-      user: uid,
-      restaurant: selectedDonor.data('name'),
-      restaurantAddress: selectedDonor.data('address')
-    };
+        var profile = {
+          user: uid,
+          restaurant: selectedDonor.data('name'),
+          restaurantAddress: selectedDonor.data('address')
+        };
 
     console.log(profile);
 
-    // firebase.database().ref("/users").push(profile); 
-    firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
-        location.href="Donate.html";
-    });
+        // firebase.database().ref("/users").push(profile); 
+        firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
+            location.href="Donate.html";
+        });
 
   });
 

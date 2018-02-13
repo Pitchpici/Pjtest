@@ -15,6 +15,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/javascript/da.js"></script>
+
 
 </head>
 
@@ -120,42 +122,43 @@
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	
+
 </body>
 
 <script type="text/javascript">
 	
-	$(document).ready(function() {
-		//Materialize CSS parralax function
-		$('.parallax').parallax();
 
-		// Initialize Firebase
-		 var config = {
-		    apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
-		    authDomain: "pjtest-faa85.firebaseapp.com",
-		    databaseURL: "https://pjtest-faa85.firebaseio.com",
-		    projectId: "pjtest-faa85",
-		    storageBucket: "pjtest-faa85.appspot.com",
-		    messagingSenderId: "755306943543"
-		  };
+	// $(document).ready(function() {
+	// 	//Materialize CSS parralax function
+	// 	$('.parallax').parallax();
 
- 		firebase.initializeApp(config);
+	// 	// Initialize Firebase
+	// 	 var config = {
+	// 	    apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
+	// 	    authDomain: "pjtest-faa85.firebaseapp.com",
+	// 	    databaseURL: "https://pjtest-faa85.firebaseio.com",
+	// 	    projectId: "pjtest-faa85",
+	// 	    storageBucket: "pjtest-faa85.appspot.com",
+	// 	    messagingSenderId: "755306943543"
+	// 	  };
 
-		var database = firebase.database();
+ // 		firebase.initializeApp(config);
 
-		var donationTable = $("#donationTable");
+	// 	var database = firebase.database();
 
-		var tableBegin;
+	// 	var donationTable = $("#donationTable");
 
-		var emailArray = [];
+	// 	var tableBegin = ;
+
+	// 	var emailArray = [];
 
 		// var user = firebase.auth().currentUser.uid; //grab uid
 		// var email = firebase.auth().currentUser.email; //grab email address
 
-		var user = 2; //restaurant user ID!!!
+		// var user = 2; //restaurant user ID!!!
 
-		tableBegin = "<tr><th>" + "Roxy" + "</th><th>" + "Roxy's mansion" + 
-                "</th>";
+		// tableBegin = "<tr><th>" + "Roxy" + "</th><th>" + "Roxy's mansion" + 
+  //               "</th>";
         //         console.log(tableBegin);
 		//save restaurant profile
 		
@@ -177,85 +180,85 @@
 
 
 
-		database.ref('users/' + user + '/donations').on("child_added", function(snapshot) {
+		// database.ref('users/' + user + '/donations').on("child_added", function(snapshot) {
 
-			// Log everything that's coming out of snapshot
-			console.log(snapshot.val());
+		// 	// Log everything that's coming out of snapshot
+		// 	console.log(snapshot.val());
 
-			var userID = snapshot.ref.parent.parent.getKey(); // this gets the restaurant's id
-			console.log(userID); //logs user id
+		// 	var userID = snapshot.ref.parent.parent.getKey(); // this gets the restaurant's id
+		// 	console.log(userID); //logs user id
 
-			var userKey = snapshot.ref.getKey(); //gets the donation key
-			console.log(userKey);
-
-
-			var tableComplete = tableBegin + "<td>"+ snapshot.val().donateFood + "</th><th>"+ snapshot.val().menuNumber + "</th><th>"+ snapshot.val().pickUp + "</th><th><p><input type='checkbox' class='filled-in happy' id='" + userKey + "' /><label for='" + userKey+ "''></label></p></tr>";
-
-			 console.log(tableComplete);
+		// 	var userKey = snapshot.ref.getKey(); //gets the donation key
+		// 	console.log(userKey);
 
 
-			donationTable.append(tableComplete);
+		// 	var tableComplete = tableBegin + "<td>"+ snapshot.val().donateFood + "</th><th>"+ snapshot.val().menuNumber + "</th><th>"+ snapshot.val().pickUp + "</th><th><p><input type='checkbox' class='filled-in happy' id='" + userKey + "' /><label for='" + userKey+ "''></label></p></tr>";
+
+		// 	 console.log(tableComplete);
 
 
-			// Handle the errors
+		// 	donationTable.append(tableComplete);
 
-			tableComplete = "";
 
-		}, function(errorObject) {
+		// 	// Handle the errors
 
-			console.log("Errors handled: " + errorObject.code);
+		// 	tableComplete = "";
 
-		});
+		// }, function(errorObject) {
+
+		// 	console.log("Errors handled: " + errorObject.code);
+
+		// });
 
 		//user id will change here, this ID will be for the angel!!!
 
-		$("#btnHappy").on("click", function() {
+	// 	$("#btnHappy").on("click", function() {
 
-			var obj = {};
+	// 		var obj = {};
 			
-			emailArray = [];			
+	// 		emailArray = [];			
 
-			$(".happy").each(function (index, element) {
+	// 		$(".happy").each(function (index, element) {
 
 
-				if (element.checked) {
+	// 			if (element.checked) {
 
-					console.log(element);
-					var key = $(this).attr("id");
-					console.log(key); //this is the donation unique key
+	// 				console.log(element);
+	// 				var key = $(this).attr("id");
+	// 				console.log(key); //this is the donation unique key
 
-					database.ref('donations/' + key).once('value').then(function(snapshot) {
+	// 				database.ref('donations/' + key).once('value').then(function(snapshot) {
 						
-						var donorEmail = snapshot.val().email;
-						console.log(donorEmail);
+	// 					var donorEmail = snapshot.val().email;
+	// 					console.log(donorEmail);
 
-						emailArray.push(donorEmail);
-						console.log(emailArray);
+	// 					emailArray.push(donorEmail);
+	// 					console.log(emailArray);
 
-						return emailArray;
-					});
+	// 					return emailArray;
+	// 				});
 
-					// console.log("outside array" + email.Array);
-
-
-					obj['users/' + user + '/donations/' + $(this).attr("id")] = null;
-					 $(this).parents("tr").remove(); //removes row from table
-
-					//grab email address based on the id
-
-				}	
-
-						console.log('outerspace' + emailArray);
-				});// close button happy
-
-		database.ref().update(obj);	
+	// 				// console.log("outside array" + email.Array);
 
 
-		});
+	// 				obj['users/' + user + '/donations/' + $(this).attr("id")] = null;
+	// 				 $(this).parents("tr").remove(); //removes row from table
+
+	// 				//grab email address based on the id
+
+	// 			}	
+
+	// 					console.log('outerspace' + emailArray);
+	// 			});// close button happy
+
+	// 	database.ref().update(obj);	
+
+
+	// 	});
 
 
 
-	});
+	// });
 </script>
 
 </html>
