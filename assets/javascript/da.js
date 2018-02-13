@@ -21,8 +21,6 @@ $(document).ready(function() {
 
 	var donationTable = $("#donationTable");
 
-	var tableBegin;
-
 
 	var emailArray = [];
 
@@ -36,11 +34,7 @@ $(document).ready(function() {
 
 		event.preventDefault();
 
-		// var user = firebase.auth().currentUser.uid;
-		// var email = firebase.auth().currentUser.email;
-
-		var user = "ulIvASjnMuUlL8VrjxjQ0rfAaRy2";
-		var email = "roxana.milea.g@gmail.com";
+	console.log("this is the user id: " + uid);
 
 		if (($("#donateFood").val() == "") || ($("#menuNumber").val() == "") || ($("#value").val() == "") || ($("#pickUp").val() == "")) {
 
@@ -60,15 +54,9 @@ $(document).ready(function() {
 			var pickUp = $("#pickUp").val().trim();
 
 
-			// var user = firebase.auth().currentUser.uid;
-			// var email = firebase.auth().currentUser.email;
-
-			// var user = 3;
-			// var email = "roxanamilea@ymail.com";
-
 			var temp = {
 
-				userId: user,
+				userId: uid,
 				email: email, //added email to the object
 
 				donateFood: donateFood,

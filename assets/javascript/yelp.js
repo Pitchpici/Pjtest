@@ -77,6 +77,8 @@ $(document).ready(function() {
         console.log("You are not signed in!");
       }  //
 
+
+
     var selectedDonor = $(this);
     console.log(selectedDonor.data('name'));
 
