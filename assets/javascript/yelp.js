@@ -64,13 +64,29 @@ $(document).on("click", ".selectName", function(event) {
 
     event.preventDefault();
 
+//this is funcking working!!!!
+       var user = firebase.auth().currentUser;
+       console.log("this should be the user auth object: " + user);
+
+      var uid, email;
+
+        if (user != null) {
+          uid = user.uid;
+          email = user.email;
+        }
+        else {
+          console.log("You are not signed in!");
+        }  //
+
+
+
         var selectedDonor = $(this);
         console.log(selectedDonor.data('name'));
 
         var profile = {
           user: uid,
           restaurant: selectedDonor.data('name'),
-          restaurantAddress: selectedDonor.data('address'),
+          restaurantAddress: selectedDonor.data('address')
         };
 
     console.log(profile);
