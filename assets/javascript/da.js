@@ -17,7 +17,8 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   var database = firebase.database();
-  console.log("currentUId:" + currentUid);
+
+
 
 	var donationTable = $("#donationTable");
 
@@ -34,7 +35,7 @@ $(document).ready(function() {
 
 		event.preventDefault();
 
-		console.log("this is the user id: " + currentUid);
+		console.log("this is the user id: " + uid);
 
 		if (($("#donateFood").val() == "") || ($("#menuNumber").val() == "") || ($("#value").val() == "") || ($("#pickUp").val() == "")) {
 
