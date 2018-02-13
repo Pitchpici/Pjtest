@@ -145,90 +145,90 @@
 
 <script type="text/javascript">
 
-// $(document).ready(function() {
+$(document).ready(function() {
 
-// 	 //Materialize CSS parralax function
-// 		  $('.parallax').parallax();
+	 //Materialize CSS parralax function
+		  $('.parallax').parallax();
 
-// 	// Initialize Firebase
-// 		 var config = {
-// 		    apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
-// 		    authDomain: "pjtest-faa85.firebaseapp.com",
-// 		    databaseURL: "https://pjtest-faa85.firebaseio.com",
-// 		    projectId: "pjtest-faa85",
-// 		    storageBucket: "pjtest-faa85.appspot.com",
-// 		    messagingSenderId: "755306943543"
-// 		  };
+	// Initialize Firebase
+		 var config = {
+		    apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
+		    authDomain: "pjtest-faa85.firebaseapp.com",
+		    databaseURL: "https://pjtest-faa85.firebaseio.com",
+		    projectId: "pjtest-faa85",
+		    storageBucket: "pjtest-faa85.appspot.com",
+		    messagingSenderId: "755306943543"
+		  };
 
-//   firebase.initializeApp(config);
+  firebase.initializeApp(config);
 
-//   var database = firebase.database();
+  var database = firebase.database();
 
-//   		// var user = firebase.auth().currentUser.uid; //grab uid
-// 		// var email = firebase.auth().currentUser.email; //grab email address for restaurant
+  		// var user = firebase.auth().currentUser.uid; //grab uid
+		// var email = firebase.auth().currentUser.email; //grab email address for restaurant
 
-// 	//START DONATE.HTML JS
+	//START DONATE.HTML JS
 
-// 	$("#submitBtn").on("click", function(event) {
+	$("#submitBtn").on("click", function(event) {
 
-// 		event.preventDefault();
+		event.preventDefault();
 
-// 		if (($("#donateFood").val() == "") || ($("#menuNumber").val() == "") || ($("#value").val() == "") || ($("#pickUp").val() == "")) {
+		if (($("#donateFood").val() == "") || ($("#menuNumber").val() == "") || ($("#value").val() == "") || ($("#pickUp").val() == "")) {
 
-// 			$('#modal1').modal(); //initialize modal
-// 			$('#modal1').modal('open'); //open modal if any field is empty
+			$('#modal1').modal(); //initialize modal
+			$('#modal1').modal('open'); //open modal if any field is empty
 
-// 		}
+		}
 
-// 		else {
+		else {
 
-// 			var donateFood = $("#donateFood").val().trim();
+			var donateFood = $("#donateFood").val().trim();
 
-// 			var menuNumber = $("#menuNumber").val().trim();
+			var menuNumber = $("#menuNumber").val().trim();
 
-// 			var value = $("#value").val().trim();
+			var value = $("#value").val().trim();
 
-// 			var pickUp = $("#pickUp").val().trim();
-
-
-// 			// var user = firebase.auth().currentUser.uid;
-// 			var user = 2;
-// 			var email = "roxanamilea@ymail.com";
-
-// 			var temp = {
-
-// 				userId: user,
-// 				email: email,
-
-// 				donateFood: donateFood,
-// 				menuNumber: menuNumber,
-// 				value: value,
-// 				pickUp: pickUp
-// 			};
-
-// 			console.log(temp);
-
-// 			var newKey = database.ref('donations/').push().key; //generate unique key for both pushes
-// 			console.log(newKey);
-
-// 			database.ref('donations/'+ newKey).set(temp); //you SET once in the donations branch with unique key
+			var pickUp = $("#pickUp").val().trim();
 
 
-// 			database.ref('users/' + user + "/donations/" + newKey).set(temp); //and, here, under each user, with the same UNIQUE key
+			// var user = firebase.auth().currentUser.uid;
+			var user = 2;
+			var email = "roxanamilea@ymail.com";
 
-// 			$("#donateFood").val("");
-// 			$("#menuNumber").val("");
-// 			$("#value").val("");
-// 			$("#pickUp").val("");
+			var temp = {
 
-// 		}
-// 		// return firebase.database().ref("/donations");
+				userId: user,
+				email: email,
 
-// 	});
+				donateFood: donateFood,
+				menuNumber: menuNumber,
+				value: value,
+				pickUp: pickUp
+			};
+
+			console.log(temp);
+
+			var newKey = database.ref('donations/').push().key; //generate unique key for both pushes
+			console.log(newKey);
+
+			database.ref('donations/'+ newKey).set(temp); //you SET once in the donations branch with unique key
 
 
-// 	//END DONATE.HTML JS
-// }); //close document ready function
+			database.ref('users/' + user + "/donations/" + newKey).set(temp); //and, here, under each user, with the same UNIQUE key
+
+			$("#donateFood").val("");
+			$("#menuNumber").val("");
+			$("#value").val("");
+			$("#pickUp").val("");
+
+		}
+		// return firebase.database().ref("/donations");
+
+	});
+
+
+	//END DONATE.HTML JS
+}); //close document ready function
 </script>
 
 <script type="text/javascript" src="assets/javascript/total.js"></script>

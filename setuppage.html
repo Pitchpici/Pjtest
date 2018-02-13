@@ -124,93 +124,93 @@
 </body>
 
 <script type="text/javascript">
-  //START SETUP PAGE JS
-  // $(document).ready(function() {
+  START SETUP PAGE JS
+  $(document).ready(function() {
 
-  //  //Materialize CSS parralax function
-  //     $('.parallax').parallax();
-
-
-  //   // Initialize Firebase
-  //   var config = {
-  //       apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
-  //       authDomain: "pjtest-faa85.firebaseapp.com",
-  //       databaseURL: "https://pjtest-faa85.firebaseio.com",
-  //       projectId: "pjtest-faa85",
-  //       storageBucket: "pjtest-faa85.appspot.com",
-  //       messagingSenderId: "755306943543"
-  //     };
-
-  //    firebase.initializeApp(config);
-
-  //   var database = firebase.database();
-  //   //END Initialize Firebase
-
-  //   // var user = firebase.auth().currentUser;
-
-  //   // var uid, email;
-
-  //   //   if (user != null) {
-  //   //     uid = user.uid;
-  //   //     email = user.email;
-  //   //   }
-  //   //   else {
-  //   //     console.log("You are not signed in!");
-  //   //   }  
+   //Materialize CSS parralax function
+      $('.parallax').parallax();
 
 
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
+        authDomain: "pjtest-faa85.firebaseapp.com",
+        databaseURL: "https://pjtest-faa85.firebaseio.com",
+        projectId: "pjtest-faa85",
+        storageBucket: "pjtest-faa85.appspot.com",
+        messagingSenderId: "755306943543"
+      };
 
-  //   var organizationForm = $("#organization-form");
-  //   var restaurantForm = $("#restaurant-form");
-  //   var buttons = $("#buttongroup");
-  //   var submit = $("#submit");
+     firebase.initializeApp(config);
 
-  //   organizationForm.hide();
-  //   restaurantForm.hide();
-  //   submit.hide();
+    var database = firebase.database();
+    //END Initialize Firebase
 
-  //   $("#donor").on("click", function(event) {
-  //     console.log("donor clicked")
-  //     restaurantForm.show();
-  //     submit.show();
+    // var user = firebase.auth().currentUser;
 
-  //     organizationForm.hide();
-  //     buttons.hide();
-  //   });
+    // var uid, email;
 
-  //   $("#requester").on("click", function(event) {
-  //     console.log("requester clicked")
-  //     organizationForm.show();
-  //     submit.show();
+    //   if (user != null) {
+    //     uid = user.uid;
+    //     email = user.email;
+    //   }
+    //   else {
+    //     console.log("You are not signed in!");
+    //   }  
 
-  //     restaurantForm.hide();
-  //     buttons.hide();
+
+
+    var organizationForm = $("#organization-form");
+    var restaurantForm = $("#restaurant-form");
+    var buttons = $("#buttongroup");
+    var submit = $("#submit");
+
+    organizationForm.hide();
+    restaurantForm.hide();
+    submit.hide();
+
+    $("#donor").on("click", function(event) {
+      console.log("donor clicked")
+      restaurantForm.show();
+      submit.show();
+
+      organizationForm.hide();
+      buttons.hide();
+    });
+
+    $("#requester").on("click", function(event) {
+      console.log("requester clicked")
+      organizationForm.show();
+      submit.show();
+
+      restaurantForm.hide();
+      buttons.hide();
   
-  //   });
+    });
 
-  //   $("#submitOrg").on("click", function(event) {
-  //     event.preventDefault();
+    $("#submitOrg").on("click", function(event) {
+      event.preventDefault();
 
-  //     var organization = $("#organization").val().trim();
-  //     var organizationAddress = $("#organization-address").val().trim();
+      var organization = $("#organization").val().trim();
+      var organizationAddress = $("#organization-address").val().trim();
      
-  //     // var user = firebase.auth().currentUser.uid;
+      // var user = firebase.auth().currentUser.uid;
 
-  //     var profile = {
-  //       user: uid,
-  //       organization: organization,
-  //       organizationAddress: organizationAddress
-  //     };
+      var profile = {
+        user: uid,
+        organization: organization,
+        organizationAddress: organizationAddress
+      };
 
-  //     console.log(profile);
+      console.log(profile);
 
-  //     firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
-  //       location.href="Donate.html";
-  //     });
+      firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
+        location.href="Donate.html";
+      });
 
-  //   });
+    });
 
-  // });
+  });
 
 
 
@@ -218,7 +218,6 @@
 
   //END SETUP PAGE JS
 </script>
-<script type="text/javascript" src="assets/javascript/total.js"></script>
-<!-- <script src="assets/javascript/yelp.js"></script>
- -->
+<script src="assets/javascript/yelp.js"></script>
+
 </html>
