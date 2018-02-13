@@ -59,7 +59,8 @@ $(document).ready(function() {
   //check to see if user signed in and get profile data
 
 
-  $(document).on("click", ".selectName", function(event) {
+  
+$(document).on("click", ".selectName", function(event) {
 
     event.preventDefault();
 
@@ -98,4 +99,6 @@ $(document).ready(function() {
     });
 
   });
+
+
 });
