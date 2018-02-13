@@ -17,7 +17,7 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   var database = firebase.database();
-
+  console.log("currentUId:" + currentUid);
 
 	var donationTable = $("#donationTable");
 
