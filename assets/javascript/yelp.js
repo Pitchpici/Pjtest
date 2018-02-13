@@ -64,7 +64,7 @@ $(document).on("click", ".selectName", function(event) {
 
     event.preventDefault();
 
-//this is funcking working!!!!
+//get user info???
        var user = firebase.auth().currentUser;
        console.log("this should be the user auth object: " + user);
 
