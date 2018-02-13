@@ -55,17 +55,17 @@ $(document).ready(function() {
       console.log("no user signed in");
 
       // FirebaseUI config.
-      var uiConfig = {
-        signInSuccessUrl: 'https://Pitchpici.github.io/Pjtest/setuppage.html',
-        signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-          firebase.auth.EmailAuthProvider.PROVIDER_ID
-        ],
-        // Terms of service url.
-        tosUrl: 'https://Pitchpici.github.io/'
-      };
+          var uiConfig = {
+            signInSuccessUrl: 'https://Pitchpici.github.io/Pjtest/setuppage.html',
+            signInOptions: [
+              // Leave the lines as is for the providers you want to offer your users.
+              firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+              firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+              firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            // Terms of service url.
+            tosUrl: 'https://Pitchpici.github.io/'
+          };
 
       // Initialize the FirebaseUI Widget using Firebase.
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -79,50 +79,50 @@ $(document).ready(function() {
 
   //START SETUP PAGE JS
 
-  var organizationForm = $("#organization-form");
-  var restaurantForm = $("#restaurant-form");
-  var buttons = $("#buttongroup");
-  var submit = $("#submit");
+  // var organizationForm = $("#organization-form");
+  // var restaurantForm = $("#restaurant-form");
+  // var buttons = $("#buttongroup");
+  // var submit = $("#submit");
 
-  organizationForm.hide();
-  restaurantForm.hide();
-  submit.hide();
+  // organizationForm.hide();
+  // restaurantForm.hide();
+  // submit.hide();
 
-  $("#donor").on("click", function(event) {
-    console.log("donor clicked")
-    restaurantForm.show();
-    submit.show();
+  // $("#donor").on("click", function(event) {
+  //   console.log("donor clicked")
+  //   restaurantForm.show();
+  //   submit.show();
 
-    organizationForm.hide();
-    // $("#organization").val("");
-    // $("#organization-address").val("");
-    buttons.hide();
-    //hide #organization-form
-    //show #restaurant-form
-    //hide buttons
-  });
+  //   organizationForm.hide();
+  //   // $("#organization").val("");
+  //   // $("#organization-address").val("");
+  //   buttons.hide();
+  //   //hide #organization-form
+  //   //show #restaurant-form
+  //   //hide buttons
+  // });
 
-  $("#requester").on("click", function(event) {
-    console.log("requester clicked")
-    organizationForm.show();
-    submit.show();
+  // $("#requester").on("click", function(event) {
+  //   console.log("requester clicked")
+  //   organizationForm.show();
+  //   submit.show();
 
-    restaurantForm.hide();
-    // $("#restaurant").val("");
-    // $("#restaurant-address").val("");
-    buttons.hide();
-    //show #organization-form
-    //hide #restaurant-form
-    //hide buttons
-  });
+  //   restaurantForm.hide();
+  //   // $("#restaurant").val("");
+  //   // $("#restaurant-address").val("");
+  //   buttons.hide();
+  //   //show #organization-form
+  //   //hide #restaurant-form
+  //   //hide buttons
+  // });
 
  
 
-  //END SETUP PAGE JS
+  // //END SETUP PAGE JS
 
-  function goToHome() {
-    location.href = "https://Pitchpici.github.io/Pjtest/Donate.html";
-  }
+  // function goToHome() {
+  //   location.href = "https://Pitchpici.github.io/Pjtest/Donate.html";
+  // }
 
 
 });
