@@ -1,6 +1,6 @@
 $(document).ready(function() {
   //Materialize CSS parralax function
-  // $('.parallax').parallax();
+  $('.parallax').parallax();
 
   // Initialize Firebase
    var config = {
