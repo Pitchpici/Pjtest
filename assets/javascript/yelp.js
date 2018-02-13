@@ -59,6 +59,7 @@ $(document).ready(function() {
   //check to see if user signed in and get profile data
 
    var user = firebase.auth().currentUser;
+   console.log("this should be the user auth object: " + user);
 
     var uid, email;
 
