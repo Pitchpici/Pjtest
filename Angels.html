@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<title> Angels Page </title>
 
@@ -11,13 +12,12 @@
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">  --><!-- //Bootstrap CDN -->
+	<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">  -->
+	<!-- //Bootstrap CDN -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 </head>
 
@@ -25,78 +25,93 @@
 <body>
 
 	<nav>
-	    <div class="nav-wrapper deep-orange darken-1">
+		<div class="nav-wrapper deep-orange darken-1">
 
-	     	<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
 
-		        <li><a href="setuppage.html">Setup Page</a></li>
-		        <li><a href="Donate.html">Donate</a></li>
-		        <li><a href="index.html">Authentication (Index)</a></li>
-		        <li><a href="TermsConditions.html">Terms&Conditions</a></li>
+				<li><a href="setuppage.html">Setup Page</a></li>
+				<li><a href="Donate.html">Donate</a></li>
+				<li><a href="index.html">Authentication (Index)</a></li>
+				<li><a href="TermsConditions.html">Terms&Conditions</a></li>
 
-	      	</ul>
+			</ul>
 
-	   	</div>
+		</div>
 	</nav>
 
 	<header class="deep-orange darken-1">
 		<div class="container">
-  			  <h2 class="display-3 center-align"> KarmaFoodBank </h2>
- 		</div>
+			<h2 class="display-3 center-align"> KarmaFoodBank </h2>
+		</div>
 	</header>
 
 	<main>
+
+
+		<div class="parallax-container">
+			<div class="parallax"><img src="assets/staff.jpg"></div>
+		</div>
+
+
 		<div class="section white">
 
 			<div class="container">
 
 				<div class="card center-align">
-		            <div class="card-content">
-		              <span class="card-title"> First Come - First Serve! </span>
-		              <br />
+					<div class="card-content">
+						<span class="card-title"> First Come - First Serve! </span>
+						<br />
 
 						<table class="black-text highlight bordered responsive-table">
-					        <thead class="deep-orange darken-1">
-						        <tr>
-						            <th><strong>Restaurant</strong></th>
-						            <th><strong>Address</strong></th>
-						            <th><strong>Food Type</strong></th>
-						            <th><strong>Number of items</strong></th>
-						            <th><strong>Pick-up time</strong></th>
-						            <th><strong>Grab!</strong></th>
-						        </tr>
-					        </thead>
+							<thead class="deep-orange darken-1">
+								<tr>
+									<th><strong>Restaurant</strong></th>
+									<th><strong>Address</strong></th>
+									<th><strong>Food Type</strong></th>
+									<th><strong>Number of items</strong></th>
+									<th><strong>Pick-up time</strong></th>
+									<th><strong>Grab!</strong></th>
+								</tr>
+							</thead>
 
-					        <tbody>
-						    <!--    // user entries go here //     -->
-						    	<tr>
-						    		<th>Caffe Prego</th>
-						    		<th>44 Shore Road, Ogunquit, ME</th>
-						    		<th>Pizza</th>
-						    		<th>4</th>
-						    		<th>22:00-23:59</th>
-						    		<th><p>
-									      <input type="checkbox" class="filled-in" id="filled-in-box" />
-									      <label for="filled-in-box"></label>
-									    </p>
+							<tbody id="donationTable">
+								<!--    // user entries go here //     -->
+								<tr>
+									<th>Caffe Prego</th>
+									<th>44 Shore Road, Ogunquit, ME</th>
+									<th>Pizza</th>
+									<th>4</th>
+									<th>22:00-23:59</th>
+									<th>
+										<p>
+											<input type="checkbox" class="filled-in" id="filled-in-box" />
+											<label for="filled-in-box"></label>
+										</p>
 									</th>
-						    	</tr>
+								</tr>
 
-					        </tbody>
-				    	</table>
+							</tbody>
+						</table>
 
-		  	    	</div>
-		  		</div> <!-- close card center-align -->
+					</div>
+				</div>
+				<!-- close card center-align -->
 
-		  		<div class="row">
-				    <button class="btn waves-effect waves-light btn-large col s8 offset-s2" type="submit" name="action">Make Someone Happy!
+				<div class="row">
+					<button class="btn waves-effect waves-light btn-large col s8 offset-s2" type="submit" name="action" id="btnHappy">Make Someone Happy!
 	   								 <i class="material-icons right">send</i>
 	 				</button>
-			    </div>
+				</div>
 
-		  	</div>
-  		</div>
-  	</main>
+			</div>
+		</div>
+
+		<div class="parallax-container">
+			<div class="parallax"><img src="assets/food.jpg"></div>
+		</div>
+
+
+	</main>
 
 
 
@@ -107,8 +122,143 @@
 	</footer>
 
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script type="text/javascript" src="assets/javascript/da.js"></script>
 </body>
 
+<!-- <script type="text/javascript">
+	
+	$(document).ready(function() {
+		//Materialize CSS parralax function
+		$('.parallax').parallax();
+
+		// Initialize Firebase
+		 var config = {
+		    apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
+		    authDomain: "pjtest-faa85.firebaseapp.com",
+		    databaseURL: "https://pjtest-faa85.firebaseio.com",
+		    projectId: "pjtest-faa85",
+		    storageBucket: "pjtest-faa85.appspot.com",
+		    messagingSenderId: "755306943543"
+		  };
+
+ 		firebase.initializeApp(config);
+
+		var database = firebase.database();
+
+		var donationTable = $("#donationTable");
+
+		var tableBegin;
+
+		var emailArray = [];
+
+		// var user = firebase.auth().currentUser.uid; //grab uid
+		// var email = firebase.auth().currentUser.email; //grab email address
+
+		var user = 2; //restaurant user ID!!!
+
+		tableBegin = "<tr><th>" + "Roxy" + "</th><th>" + "Roxy's mansion" + 
+                "</th>";
+        //         console.log(tableBegin);
+		//save restaurant profile
+		
+        // database.ref("users/" + user + "/profile/").on("value", function(snapshot) {
+        //      console.log(snapshot.val());
+
+        //      tableBegin = "<tr><th>" + snapshot.val().restaurant + "</th><th>" + snapshot.val().restaurantAddress + 
+        //         "</th>";
+        //         console.log(tableBegin);
+             
+        //      // donationTable.append("<tr><th>" + snapshot.val().restaurant + "</th><th>" + snapshot.val().restaurantAddress + 
+        //      //     "</th>");
+
+        //      return tableBegin;
+        // }, function (errorObject) {
+        //   console.log("The read failed: " + errorObject.code);
+        // });
+
+
+
+
+		database.ref('users/' + user + '/donations').on("child_added", function(snapshot) {
+
+			// Log everything that's coming out of snapshot
+			console.log(snapshot.val());
+
+			var userID = snapshot.ref.parent.parent.getKey(); // this gets the restaurant's id
+			console.log(userID); //logs user id
+
+			var userKey = snapshot.ref.getKey(); //gets the donation key
+			console.log(userKey);
+
+
+			var tableComplete = tableBegin + "<td>"+ snapshot.val().donateFood + "</th><th>"+ snapshot.val().menuNumber + "</th><th>"+ snapshot.val().pickUp + "</th><th><p><input type='checkbox' class='filled-in happy' id='" + userKey + "' /><label for='" + userKey+ "''></label></p></tr>";
+
+			 console.log(tableComplete);
+
+
+			donationTable.append(tableComplete);
+
+
+			// Handle the errors
+
+			tableComplete = "";
+
+		}, function(errorObject) {
+
+			console.log("Errors handled: " + errorObject.code);
+
+		});
+
+		//user id will change here, this ID will be for the angel!!!
+
+		$("#btnHappy").on("click", function() {
+
+			var obj = {};
+			
+			emailArray = [];			
+
+			$(".happy").each(function (index, element) {
+
+
+				if (element.checked) {
+
+					console.log(element);
+					var key = $(this).attr("id");
+					console.log(key); //this is the donation unique key
+
+					database.ref('donations/' + key).once('value').then(function(snapshot) {
+						
+						var donorEmail = snapshot.val().email;
+						console.log(donorEmail);
+
+						emailArray.push(donorEmail);
+						console.log(emailArray);
+
+						return emailArray;
+					});
+
+					// console.log("outside array" + email.Array);
+
+
+					obj['users/' + user + '/donations/' + $(this).attr("id")] = null;
+					 $(this).parents("tr").remove(); //removes row from table
+
+					//grab email address based on the id
+
+				}	
+
+						console.log('outerspace' + emailArray);
+				});// close button happy
+
+		database.ref().update(obj);	
+
+
+		});
+
+
+
+	});
+</script>
+ -->
 </html>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<title> Donate Page </title>
 
@@ -11,118 +12,220 @@
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> <! //Bootstrap CDN -->
+	<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> <! //Bootstrap CDN -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 
-
-
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
-	
-</head>  
+</head>
 
 
 <body>
 
 	<nav>
-	    <div class="nav-wrapper deep-orange darken-1">
+		<div class="nav-wrapper deep-orange darken-1">
 
-	     	<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
 
-		        <li><a href="setuppage.html">Setup Page</a></li>
-		        <li><a href="index.html">Authentication (Index) </a></li>
-		        <li><a href="Angels.html">Angels</a></li>
-		        <li><a href="TermsConditions.html">Terms&Conditions</a></li>
+				<li><a href="setuppage.html">Setup Page</a></li>
+				<li><a href="index.html">Authentication (Index) </a></li>
+				<li><a href="Angels.html">Angels</a></li>
+				<li><a href="TermsConditions.html">Terms&Conditions</a></li>
 
-	      	</ul>
+			</ul>
 
-	   	</div>
+		</div>
 	</nav>
 
 	<header class="deep-orange darken-1">
 		<div class="container">
-  			  <h2 class="display-3 center-align"> KarmaFoodBank </h2>
- 		</div>
+			<h2 class="display-3 center-align"> KarmaFoodBank </h2>
+		</div>
 	</header>
 
 	<main>
 
 		<div class="parallax-container">
-     		 <div class="parallax"><img src="assets/staff.jpg"></div>
-    	</div>
+			<div class="parallax"><img src="assets/staff.jpg"></div>
+		</div>
 
 		<div class="section white">
-				<div class="container center">
+			<div class="container center">
 
-					<div class="row"><h4 class="text-center">Welcome, NAME</h4></div> <!-- name is a placeholder for the name of the restaurant!!! -->
+				<div class="row">
+					<h4 class="text-center">Welcome, NAME</h4></div>
+				<!-- name is a placeholder for the name of the restaurant!!! -->
 
-					<div class="row">
-					    <form class="col s12">
+				<div class="row">
+					<form class="col s12">
 
-						    <div class="row">
+						<div class="row">
 
-						        <div class="input-field col s12">
-						          <input id="donateFood" type="text" class="validate">
-						          <label for="donateFood">What would you like to donate today?</label>
-						        </div>
+							<div class="input-field col s12">
+								<input placeholder="ex: pizzas, desserts, full menus" id="donateFood" type="text" class="validate">
+								<label for="donateFood"><h5>What would you like to donate today?</h5></label>
+							</div>
 
-						    </div>
+						</div>
 
-						    <div class="row">
+						<div class="row">
 
-						        <div class="input-field col s12">
-						          <input id="menuNumber" type="text" class="validate">
-						          <label for="menuNumber">For how many people?</label>
-						        </div>
+							<div class="input-field col s12">
+								<input placeholder="2, 4, 6, how many portions you want to offer :)" id="menuNumber" type="text" class="validate">
+								<label for="menuNumber"><h5>For how many people?</h5></label>
+							</div>
 
-						    </div>
+						</div>
 
-						    <div class="row">
+						<div class="row">
 
-						        <div class="input-field col s12">
-						          <input id="value" type="text" class="validate">
-						          <label for="value">Aproximate value:</label>
-						        </div>
+							<div class="input-field col s12">
+								<input placeholder="$value" id="value" type="text" class="validate">
+								<label for="value"><h5>Approximate value:</h5></label>
+							</div>
 
-						    </div>
+						</div>
 
-						     <div class="row">
+						<div class="row">
 
-						        <div class="input-field col s12">
-						          <input id="pickUp" type="text" class="validate">
-						          <label for="pickUp">Pick-up time:</label>
-						        </div>
+							<div class="input-field col s12">
+								<input placeholder="10:00 PM - 11:30 PM" id="pickUp" type="text" class="validate">
+								<label for="pickUp"><h5>Pick-up time:</h5></label>
+							</div>
 
-						    </div>
+						</div>
 
-						    <div class="row">
-						    	<button class="btn waves-effect waves-light" type="submit" name="action">Confirm&Publish
+						<div class="row">
+							<button class="btn waves-effect waves-light" type="submit" name="action" id="submitBtn">Confirm&Publish
 	   								 <i class="material-icons right">send</i>
 	 							</button>
-						    </div>
+						</div>
 
-					    </form>
-					</div>
+					</form>
+				</div>
 
-				</div><!-- //close container center -->
+				<!--  Modal structure -->
+
+				<div id="modal1" class="modal">
+				    <div class="modal-content">
+					      <h4>Special Karma Request</h4>
+					      <p>Please complete all fields before submitting your donation!</p>
+				    </div>
+				    <div class="modal-footer">
+				   		  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+				    </div>
+			    </div> <!-- close --> <!-- modal -->
+
+
+			</div>
+			<!-- //close container center -->
 		</div>
 
 		<div class="parallax-container">
-     		 <div class="parallax"><img src="assets/food.jpg"></div>
-    	</div>	
+			<div class="parallax"><img src="assets/food.jpg"></div>
+		</div>
 
 	</main>
 
 	<footer class="page-footer footer-copyright deep-orange darken-1">
 		<div class="container">
-			<h5 class="center-align"><strong>Copyright &copy; karma<span class="flip">K</span>oins</strong></h5>			
+			<h5 class="center-align"><strong>Copyright &copy; karma<span class="flip">K</span>oins</strong></h5>
 		</div>
 	</footer>
 
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script type="text/javascript" src="assets/javascript/da.js"></script>
 
 </body>
+
+<script type="text/javascript">
+
+// $(document).ready(function() {
+
+// 	 //Materialize CSS parralax function
+// 		  $('.parallax').parallax();
+
+// 	// Initialize Firebase
+// 		 var config = {
+// 		    apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
+// 		    authDomain: "pjtest-faa85.firebaseapp.com",
+// 		    databaseURL: "https://pjtest-faa85.firebaseio.com",
+// 		    projectId: "pjtest-faa85",
+// 		    storageBucket: "pjtest-faa85.appspot.com",
+// 		    messagingSenderId: "755306943543"
+// 		  };
+
+//   firebase.initializeApp(config);
+
+//   var database = firebase.database();
+
+//   		// var user = firebase.auth().currentUser.uid; //grab uid
+// 		// var email = firebase.auth().currentUser.email; //grab email address for restaurant
+
+// 	//START DONATE.HTML JS
+
+// 	$("#submitBtn").on("click", function(event) {
+
+// 		event.preventDefault();
+
+// 		if (($("#donateFood").val() == "") || ($("#menuNumber").val() == "") || ($("#value").val() == "") || ($("#pickUp").val() == "")) {
+
+// 			$('#modal1').modal(); //initialize modal
+// 			$('#modal1').modal('open'); //open modal if any field is empty
+
+// 		}
+
+// 		else {
+
+// 			var donateFood = $("#donateFood").val().trim();
+
+// 			var menuNumber = $("#menuNumber").val().trim();
+
+// 			var value = $("#value").val().trim();
+
+// 			var pickUp = $("#pickUp").val().trim();
+
+
+// 			// var user = firebase.auth().currentUser.uid;
+// 			var user = 2;
+// 			var email = "roxanamilea@ymail.com";
+
+// 			var temp = {
+
+// 				userId: user,
+// 				email: email,
+
+// 				donateFood: donateFood,
+// 				menuNumber: menuNumber,
+// 				value: value,
+// 				pickUp: pickUp
+// 			};
+
+// 			console.log(temp);
+
+// 			var newKey = database.ref('donations/').push().key; //generate unique key for both pushes
+// 			console.log(newKey);
+
+// 			database.ref('donations/'+ newKey).set(temp); //you SET once in the donations branch with unique key
+
+
+// 			database.ref('users/' + user + "/donations/" + newKey).set(temp); //and, here, under each user, with the same UNIQUE key
+
+// 			$("#donateFood").val("");
+// 			$("#menuNumber").val("");
+// 			$("#value").val("");
+// 			$("#pickUp").val("");
+
+// 		}
+// 		// return firebase.database().ref("/donations");
+
+// 	});
+
+
+// 	//END DONATE.HTML JS
+// }); //close document ready function
+</script>
 
 </html>

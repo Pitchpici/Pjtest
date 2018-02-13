@@ -1,94 +1,221 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Setup Page</title>
-
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js">
-
-    </script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup Page</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel=“stylesheet” href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 
-  <body>
-
-    <nav>
-        <div class="nav-wrapper deep-orange darken-1">
-
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-              <li><a href="donate.html">Donate</a></li>
-              <li><a href="index.html">Authentication (Index)</a></li>
-              <li><a href="angels.html">Angels</a></li>
-              <li><a href="TermsConditions.html">Terms&Conditions</a></li>
-
-          </ul>
-
-        </div>
-    </nav>
-
-    <header class="deep-orange darken-1"> 
-        <div class="container">
-              <h2 class="display-3 center-align"> KarmaFoodBank </h2>
-        </div>
-    </header> 
-
-    <main>
-      <div class="section white">
+  </script>
+</head>
 
 
-        <div class="container">
-          <div class="card">
+<body>
 
-              <div class="card-title center-align"><h4>Setup Your Account</h4> </div>
+  <nav>
+    <div class="nav-wrapper deep-orange darken-1">
 
-              <div class="card-content center-align"><h5>Are you a donor or a messenger?</h5>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-                  <br>
+        <li><a href="Donate.html">Donate</a></li>
+        <li><a href="index.html">Authentication (Index)</a></li>
+        <li><a href="Angels.html">Angels</a></li>
+        <li><a href="TermsConditions.html">Terms&Conditions</a></li>
 
-                  <div id="buttongroup">
+      </ul>
 
-                      <button class="btn waves-effect waves-light" type="submit" name="action" id="donor"><i class="material-icons left">restaurant</i>Donor</button>
+    </div>
+  </nav>
 
-                      <button class="btn waves-effect waves-light" type="submit" name="action" id="requester"> <i class="material-icons left">sentiment_very_satisfied</i>Messenger</button>
+  <header class="deep-orange darken-1">
+    <div class="container">
+      <h2 class="display-3 center-align"> KarmaFoodBank </h2>
+    </div>
+  </header>
 
-                  </div>
-                
-                  <br />
+  <main>
 
-                    <form class="card-content" id="organization-form" hidden>
-                      Organization Name: <input type="text" id="organization" name="organization">
-                      <br></br>
-                      Address: <input type="text" id="organization-address" name="organization-address">
-                      <br></br>
-                    </form>
 
-                    <form  class="card-content" id="restaurant-form" hidden>
-                      Restaurant: <input type="text" id="restaurant" name="restaurant">
-                      <br></br>
-                      Pickup Address: <input type="text" id="restaurant-address" name="restaurant-address">
-                      <br></br>
-                    </form>
+    <div class="parallax-container">
+         <div class="parallax"><img src="assets/staff.jpg"></div>
+    </div>
 
-                   <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit</button>
 
-              </div>
+    <div class="section white">
+
+      <div class="container">
+        <div class="card">
+
+          <div class="card-title center-align">
+            <h4>Setup Your Account</h4> </div>
+
+          <div class="card-content center-align">
+            <h5>Are you a donor or a messenger?</h5>
+
+            <br>
+
+            <div id="buttongroup">
+
+              <button class="btn waves-effect waves-light" type="submit" name="action" id="donor"><i class="material-icons left">restaurant</i>Donor</button>
+
+              <button class="btn waves-effect waves-light" type="submit" name="action" id="requester"> <i class="material-icons left">sentiment_very_satisfied</i>Messenger</button>
+
+            </div>
+
+            <br />
+
+            <form class="card-content" id="organization-form" hidden>
+              Organization Name: <input type="text" id="organization" name="organization">
+              <br></br>
+              Address: <input type="text" id="organization-address" name="organization-address">
+              <br></br>
+              <button class="btn waves-effect waves-light" type="button" name="action" id="submitOrg">Submit</button>
+            </form>
+
+            <form class="card-content" id="restaurant-form" hidden>
+              Restaurant: <input type="text" id="restaurant" name="restaurant">
+              <br></br>
+              Zip Code: <input type="text" id="zipCode" name="zipcode">
+              <br></br>
+
+              <button id="yelp" type="button" value="yelp api" class="btn waves-effect waves-light">Search through Yelp</button>
+              <br />
+             
+              <div id="yelpInfo"></div>
+            </form>
+
+
 
           </div>
-        </div>
 
-    </div> <!-- close section -->
-  </main>      
+        </div>
+      </div>
+
+    </div>
+    <!-- close section -->
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="assets/food.jpg"></div>
+    </div>
+
+
+  </main>
+
+
+      <footer class="page-footer footer-copyright deep-orange darken-1">
+        <div class="container">
+          <h5 class="center-align"><strong>Copyright &copy; karma<span class="flip">K</span>oins</strong></h5>
+        </div>
+      </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 </body>
+
+<script type="text/javascript">
+  //START SETUP PAGE JS
+  $(document).ready(function() {
+
+   //Materialize CSS parralax function
+      $('.parallax').parallax();
+
+
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
+        authDomain: "pjtest-faa85.firebaseapp.com",
+        databaseURL: "https://pjtest-faa85.firebaseio.com",
+        projectId: "pjtest-faa85",
+        storageBucket: "pjtest-faa85.appspot.com",
+        messagingSenderId: "755306943543"
+      };
+
+     firebase.initializeApp(config);
+
+    var database = firebase.database();
+    //END Initialize Firebase
+
+    var user = firebase.auth().currentUser;
+
+    var uid, email;
+
+      if (user != null) {
+        uid = user.uid;
+        email = user.email;
+      }
+      else {
+        console.log("You are not signed in!");
+      }  
+
+
+
+    var organizationForm = $("#organization-form");
+    var restaurantForm = $("#restaurant-form");
+    var buttons = $("#buttongroup");
+    var submit = $("#submit");
+
+    organizationForm.hide();
+    restaurantForm.hide();
+    submit.hide();
+
+    $("#donor").on("click", function(event) {
+      console.log("donor clicked")
+      restaurantForm.show();
+      submit.show();
+
+      organizationForm.hide();
+      buttons.hide();
+    });
+
+    $("#requester").on("click", function(event) {
+      console.log("requester clicked")
+      organizationForm.show();
+      submit.show();
+
+      restaurantForm.hide();
+      buttons.hide();
+  
+    });
+
+    $("#submitOrg").on("click", function(event) {
+      event.preventDefault();
+
+      var organization = $("#organization").val().trim();
+      var organizationAddress = $("#organization-address").val().trim();
+     
+      // var user = firebase.auth().currentUser.uid;
+
+      var profile = {
+        user: uid,
+        organization: organization,
+        organizationAddress: organizationAddress
+      };
+
+      console.log(profile);
+
+      firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
+        location.href="Donate.html";
+      });
+
+    });
+
+  });
+
+
+
+
+
+  //END SETUP PAGE JS
+</script>
+<script src="assets/javascript/yelp.js"></script>
+
 </html>

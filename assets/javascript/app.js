@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   var currentUid = null;
   var usersArray=[];
-  database.ref().push(usersArray);
+  database.ref("users").push(usersArray);
 
   firebase.auth().onAuthStateChanged(function(user) {
     // onAuthStateChanged listener triggers every time the user ID token changes.
@@ -120,8 +120,9 @@ $(document).ready(function() {
     var name = $("#restaurant").val();
     var address = $("#restaurant-address").val();
     var database = firebase.database()
-    database.ref("user").push(name).push(address);
-  });
+    database.ref("users").set {
+      (name).push(address);
+  };
 
   //END SETUP PAGE JS
 
