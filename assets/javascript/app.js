@@ -116,13 +116,7 @@ $(document).ready(function() {
     //hide buttons
   });
 
-  submit.on("click", function(event) {
-    var name = $("#restaurant").val();
-    var address = $("#restaurant-address").val();
-    var database = firebase.database()
-    database.ref("users").set {
-      (name).push(address);
-  };
+ 
 
   //END SETUP PAGE JS
 
