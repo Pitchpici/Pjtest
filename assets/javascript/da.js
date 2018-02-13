@@ -34,7 +34,7 @@ $(document).ready(function() {
 
 		event.preventDefault();
 
-	console.log("this is the user id: " + uid);
+		console.log("this is the user id: " + uid);
 
 		if (($("#donateFood").val() == "") || ($("#menuNumber").val() == "") || ($("#value").val() == "") || ($("#pickUp").val() == "")) {
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
 			database.ref('donations/'+ newKey).set(temp); //you SET once in the donations branch with unique key
 
 
-			database.ref('users/' + user + "/donations/" + newKey).set(temp); //and, here, under each user, with the same UNIQUE key
+			database.ref('users/' + uid + "/donations/" + newKey).set(temp); //and, here, under each user, with the same UNIQUE key
 
 
 			// // firebase.database().ref('donations/' + user).push(temp); //pushed once into donations branch
@@ -95,7 +95,7 @@ $(document).ready(function() {
 
 			//get the information for the first two rows - USER PROFILE
 
-			database.ref("users/" + user).on("child_added", function(childSnapshot) {
+			database.ref("users/" + uid).on("child_added", function(childSnapshot) {
 							 // console.log(snapshot.val());
 
 							 // console.log("donations object" + snapshot.child('donations').val());
@@ -172,11 +172,10 @@ $(document).ready(function() {
 			console.log("ROXANA THE HAPPY BUTTON WAS CLICKED!!")
 
 			// var user = firebase.auth().currentUser.uid; // grabs the id of the angel!!!
-			var user = "-L4wsAp60-uIFTwGFVmy"; // grabs the id of the angel!!!
+			 // grabs the id of the angel!!!
 
 			// var email = firebase.auth().currentUser.email; // grabs email address of the angels, for JoAnn's API
-			var email = "clarkwmcd@gmail.com"; // grabs email address of the angels, for JoAnn's API
-
+				 // grabs email address of the angels, for JoAnn's API
 
 			var obj = {};
 
@@ -207,7 +206,7 @@ $(document).ready(function() {
 					// console.log("outside array" + email.Array);
 
 
-					obj['users/' + user + '/donations/' + $(this).attr("id")] = null;
+					obj['users/' + uid + '/donations/' + $(this).attr("id")] = null;
 					 $(this).parents("tr").remove(); //removes row from table
 
 
