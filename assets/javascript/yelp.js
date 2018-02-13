@@ -71,7 +71,6 @@ $(document).on("click", ".selectName", function(event) {
           user: uid,
           restaurant: selectedDonor.data('name'),
           restaurantAddress: selectedDonor.data('address'),
-          message: "this is working"
         };
 
     console.log(profile);
