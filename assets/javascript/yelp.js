@@ -68,7 +68,7 @@ $(document).on("click", ".selectName", function(event) {
        var user = firebase.auth().currentUser;
        console.log("this should be the user auth object: " + user);
 
-      var uid, email;
+       var uid, email;
 
         if (user != null) {
           uid = user.uid;

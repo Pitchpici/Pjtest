@@ -118,100 +118,100 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <!--   <script type="text/javascript" src="assets/javascript/total.js"></script> -->
+    <script type="text/javascript" src="assets/javascript/total.js"></script>
 
 
 </body>
 
 <script type="text/javascript">
   // START SETUP PAGE JS
-  $(document).ready(function() {
+  // $(document).ready(function() {
 
-   //Materialize CSS parralax function
-      $('.parallax').parallax();
+  //  //Materialize CSS parralax function
+  //     $('.parallax').parallax();
 
 
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
-        authDomain: "pjtest-faa85.firebaseapp.com",
-        databaseURL: "https://pjtest-faa85.firebaseio.com",
-        projectId: "pjtest-faa85",
-        storageBucket: "pjtest-faa85.appspot.com",
-        messagingSenderId: "755306943543"
-      };
+  //   // Initialize Firebase
+  //   var config = {
+  //       apiKey: "AIzaSyB-5iyoR0EA8RKc2esEUzpeSWK_jCM4C_0",
+  //       authDomain: "pjtest-faa85.firebaseapp.com",
+  //       databaseURL: "https://pjtest-faa85.firebaseio.com",
+  //       projectId: "pjtest-faa85",
+  //       storageBucket: "pjtest-faa85.appspot.com",
+  //       messagingSenderId: "755306943543"
+  //     };
 
-     firebase.initializeApp(config);
+  //    firebase.initializeApp(config);
 
-    var database = firebase.database();
-    //END Initialize Firebase
+  //   var database = firebase.database();
+  //   //END Initialize Firebase
 
-    var user = firebase.auth().currentUser;
+  //   var user = firebase.auth().currentUser;
 
-    var uid, email;
+  //   var uid, email;
 
-      if (user != null) {
-        uid = user.uid;
-        email = user.email;
-      }
-      else {
-        console.log("You are not signed in!");
-      }  
+  //     if (user != null) {
+  //       uid = user.uid;
+  //       email = user.email;
+  //     }
+  //     else {
+  //       console.log("You are not signed in!");
+  //     }  
 
-    var organizationForm = $("#organization-form");
-    var restaurantForm = $("#restaurant-form");
-    var buttons = $("#buttongroup");
-    var submit = $("#submit");
+  //   var organizationForm = $("#organization-form");
+  //   var restaurantForm = $("#restaurant-form");
+  //   var buttons = $("#buttongroup");
+  //   var submit = $("#submit");
 
-    organizationForm.hide();
-    restaurantForm.hide();
-    submit.hide();
+  //   organizationForm.hide();
+  //   restaurantForm.hide();
+  //   submit.hide();
 
-    $("#donor").on("click", function(event) {
-      console.log("donor clicked")
-      restaurantForm.show();
-      submit.show();
+  //   $("#donor").on("click", function(event) {
+  //     console.log("donor clicked")
+  //     restaurantForm.show();
+  //     submit.show();
 
-      organizationForm.hide();
-      buttons.hide();
-    });
+  //     organizationForm.hide();
+  //     buttons.hide();
+  //   });
 
-    $("#requester").on("click", function(event) {
-      console.log("requester clicked")
-      organizationForm.show();
-      submit.show();
+  //   $("#requester").on("click", function(event) {
+  //     console.log("requester clicked")
+  //     organizationForm.show();
+  //     submit.show();
 
-      restaurantForm.hide();
-      buttons.hide();
+  //     restaurantForm.hide();
+  //     buttons.hide();
   
-    });
+  //   });
 
-    $("#submitOrg").on("click", function(event) {
-      event.preventDefault();
+  //   $("#submitOrg").on("click", function(event) {
+  //     event.preventDefault();
 
-      var organization = $("#organization").val().trim();
-      var organizationAddress = $("#organization-address").val().trim();
+  //     var organization = $("#organization").val().trim();
+  //     var organizationAddress = $("#organization-address").val().trim();
      
-      // var user = firebase.auth().currentUser.uid;
+  //     // var user = firebase.auth().currentUser.uid;
 
-      var profile = {
-        user: uid,
-        organization: organization,
-        organizationAddress: organizationAddress
-      };
+  //     var profile = {
+  //       user: uid,
+  //       organization: organization,
+  //       organizationAddress: organizationAddress
+  //     };
 
-      console.log(profile);
+  //     console.log(profile);
 
-      firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
-        location.href="Donate.html";
-      });
+  //     firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
+  //       location.href="Donate.html";
+  //     });
 
-    });
+  //   });
 
-  });
+  // });
 
   //END SETUP PAGE JS
 </script>
-<script src="assets/javascript/yelp.js"></script>
+<!-- <script src="assets/javascript/yelp.js"></script> -->
 
 </html>
