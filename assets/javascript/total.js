@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    event.preventDefault();
+    
   //Materialize CSS parralax function
   $('.parallax').parallax();
 
