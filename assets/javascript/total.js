@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    
+
   //Materialize CSS parralax function
   $('.parallax').parallax();
 
@@ -207,7 +207,7 @@ var yelpObject;
         }
         else {
           console.log("You are not signed in!");
-        }  //
+        }  
 
 
 
@@ -235,6 +235,7 @@ var yelpObject;
 
   var donationTable = $("#donationTable");
   var emailArray = [];
+  var tableRow;
 
 //submit button
 
@@ -285,11 +286,7 @@ var yelpObject;
 
       database.ref('users/' + uid + "/donations/" + newKey).set(temp); //and, here, under each user, with the same UNIQUE key
 
-
-      // // firebase.database().ref('donations/' + user).push(temp); //pushed once into donations branch
-
-
-      // firebase.database().ref('users/' + user + "/donations").set(temp); //and, here, under each user
+  
 
       $("#donateFood").val("");
       $("#menuNumber").val("");
@@ -299,7 +296,7 @@ var yelpObject;
     }
 
 
-  //in the same submitBtn event, trigerred on donate page => Angels code - first of all, populate that damn table
+  //in the same submitBtn event, triggered on donate page => Angels code - first of all, populate that damn table
 
       //get the information for the first two rows - USER PROFILE
 
@@ -310,6 +307,11 @@ var yelpObject;
                // console.log("profile" + snapshot.child('profile').val());
 
                console.log(childSnapshot.val().restaurant);
+               console.log(childSnapshot.val().restaurantAddress);
+               console.log(childSnapshot.val().donateFood);
+               console.log(childSnapshot.val().menuNumber);
+               console.log(childSnapshot.val().pickup);
+
 
                
 
@@ -327,7 +329,7 @@ var yelpObject;
                // console.log(snapshot.child("profile"));
 
 
-               return tableBegin;
+               // return tableBegin;
 
         }, function (errorObject) {
               console.log("The read failed: " + errorObject.code);
