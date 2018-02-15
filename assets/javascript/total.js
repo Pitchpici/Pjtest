@@ -348,7 +348,7 @@ var yelpObject;
               console.log("The read failed: " + errorObject.code);
         });
 
-      database.ref("users"+ uid).once('value').then(function(snapshot) {
+      database.ref("users"+ currentUid + 'profile').once('value').then(function(snapshot) {
         console.log(snapshot.val());
       })
 
