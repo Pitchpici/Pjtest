@@ -243,6 +243,19 @@ var yelpObject;
 
     event.preventDefault();
 
+    var user = firebase.auth().currentUser;
+      console.log("this should be the user auth object: " + user);
+
+        var uid, email;
+
+        if (user != null) {
+          uid = user.uid;
+          email = user.email;
+        }
+        else {
+          console.log("You are not signed in!");
+        }  //
+
     console.log("this is the user id: " + uid);
 
     if (($("#donateFood").val() == "") || ($("#menuNumber").val() == "") || ($("#value").val() == "") || ($("#pickUp").val() == "")) {
