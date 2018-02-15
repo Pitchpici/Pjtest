@@ -313,7 +313,7 @@ var yelpObject;
 
       //get the information for the first two rows - USER PROFILE
 
-      database.ref("users/" + uid).on("child_added", function(childSnapshot) {
+      database.ref("users/" + uid + "/donations").on("child_added", function(childSnapshot) {
                // console.log(snapshot.val());
 
                // console.log("donations object" + snapshot.child('donations').val());
@@ -323,7 +323,7 @@ var yelpObject;
                console.log(childSnapshot.val().restaurantAddress);
                console.log(childSnapshot.val().donateFood);
                console.log(childSnapshot.val().menuNumber);
-               console.log(childSnapshot.val().pickup);
+               console.log(childSnapshot.val().pickUp);
 
 
                
