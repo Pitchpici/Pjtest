@@ -236,9 +236,8 @@ var yelpObject;
         //     location.href="Donate.html";
         // });
 
-          firebase.database().ref("/users/" + uid).set(newUser).then(function(){
-            location.href="Donate.html";
-        });
+          firebase.database().ref("/users/" + uid).set(newUser);
+    
 
   });
 
