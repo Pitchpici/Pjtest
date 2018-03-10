@@ -229,7 +229,7 @@ var yelpObject;
         //   restaurantAddress: selectedDonor.data('address')
         // };
 
-    console.log(profile);
+    // console.log(profile);
 
         // firebase.database().ref("/users").push(profile); 
         // firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
