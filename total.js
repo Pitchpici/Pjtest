@@ -214,16 +214,29 @@ var yelpObject;
         var selectedDonor = $(this);
         console.log(selectedDonor.data('name'));
 
-        var profile = {
-          user: uid,
-          restaurant: selectedDonor.data('name'),
-          restaurantAddress: selectedDonor.data('address')
-        };
+        var newUser = {
+          donations: [],
+            profile: {
+            user: uid,
+            restaurant: selectedDonor.data('name'),
+            restaurantAddress: selectedDonor.data('address')
+          }
+        }
+
+        // var profile = {
+        //   user: uid,
+        //   restaurant: selectedDonor.data('name'),
+        //   restaurantAddress: selectedDonor.data('address')
+        // };
 
     console.log(profile);
 
         // firebase.database().ref("/users").push(profile); 
-        firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
+        // firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
+        //     location.href="Donate.html";
+        // });
+
+          firebase.database().ref("/users/" + uid).set(newUser).then(function(){
             location.href="Donate.html";
         });
 
@@ -285,7 +298,7 @@ var yelpObject;
 
       // database.ref('users/' + uid + "/donations/" + newKey).set(temp); //and, here, under each user, with the same UNIQUE key
 
-       database.ref('users/' + uid + "/donations/").push(newKey);
+       database.ref('users/' + uid).set({'donations' : []});
 
       // // firebase.database().ref('donations/' + user).push(temp); //pushed once into donations branch
 
