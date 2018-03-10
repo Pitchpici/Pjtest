@@ -214,32 +214,18 @@ var yelpObject;
         var selectedDonor = $(this);
         console.log(selectedDonor.data('name'));
 
-        var newUser = {
-          donations: [],
-            profile: {
-            user: uid,
-            restaurant: selectedDonor.data('name'),
-            restaurantAddress: selectedDonor.data('address')
-          }
-        }
+        var profile = {
+          user: uid,
+          restaurant: selectedDonor.data('name'),
+          restaurantAddress: selectedDonor.data('address')
+        };
 
-        // var profile = {
-        //   user: uid,
-        //   restaurant: selectedDonor.data('name'),
-        //   restaurantAddress: selectedDonor.data('address')
-        // };
-
-    // console.log(profile);
+    console.log(profile);
 
         // firebase.database().ref("/users").push(profile); 
-        // firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
-        //     location.href="Donate.html";
-        // });
-
-          firebase.database().ref("/users/" + uid).set(newUser).then(function(){
+        firebase.database().ref("/users/" + uid + "/profile").set(profile).then(function(){
             location.href="Donate.html";
         });
-    
 
   });
 
@@ -297,9 +283,8 @@ var yelpObject;
       database.ref('donations/'+ newKey).set(temp); //you SET once in the donations branch with unique key
 
 
-      // database.ref('users/' + uid + "/donations/" + newKey).set(temp); //and, here, under each user, with the same UNIQUE key
+      database.ref('users/' + uid + "/donations/" + newKey).set(temp); //and, here, under each user, with the same UNIQUE key
 
-       database.ref('users/' + uid).set({'donations' : []});
 
       // // firebase.database().ref('donations/' + user).push(temp); //pushed once into donations branch
 
@@ -348,7 +333,7 @@ var yelpObject;
               console.log("The read failed: " + errorObject.code);
         });
 
-// }); //close submit button
+}); //close submit button
 
 //button
 });
