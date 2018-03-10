@@ -283,8 +283,9 @@ var yelpObject;
       database.ref('donations/'+ newKey).set(temp); //you SET once in the donations branch with unique key
 
 
-      database.ref('users/' + uid + "/donations/" + newKey).set(temp); //and, here, under each user, with the same UNIQUE key
+      // database.ref('users/' + uid + "/donations/" + newKey).set(temp); //and, here, under each user, with the same UNIQUE key
 
+       database.ref('users/' + uid + "/donations/").push(newKey);
 
       // // firebase.database().ref('donations/' + user).push(temp); //pushed once into donations branch
 

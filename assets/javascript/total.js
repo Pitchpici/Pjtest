@@ -235,7 +235,8 @@ var yelpObject;
 
   var donationTable = $("#donationTable");
   var emailArray = [];
-  var tableRow;
+  var tableRow = "";
+  var tableBegin = "";
 
 //submit button
 
@@ -311,7 +312,19 @@ var yelpObject;
 
   //in the same submitBtn event, triggered on donate page => Angels code - first of all, populate that damn table
 
-      //get the information for the first two rows - USER PROFILE
+      //get the information for the first two rows - USER PROFILE ???
+
+       database.ref("users/" + uid).on("value", function(snapshot) {
+               console.log(snapshot.val());
+
+               snapshot.forEach(function(childSnapshot){
+                 console.log(childSnapshot.val().restaurant);
+                 console.log(childSnapshot.val().restaurantAddress);
+                 tableBegin = "<tr><th>" + childSnapshot.val().restaurant + "</th><th>" + snapshot.val().restaurantAddress +
+                  "</th>";
+                  return tableBegin;
+
+               })
 
       database.ref("users/" + uid + "/donations").on("child_added", function(childSnapshot) {
                // console.log(snapshot.val());
@@ -348,7 +361,7 @@ var yelpObject;
               console.log("The read failed: " + errorObject.code);
         });
 
-      database.ref("users"+ currentUid + 'profile').once('value').then(function(snapshot) {
+      database.ref("users"+ current + 'profile').once('value').then(function(snapshot) {
         console.log(snapshot.val());
       })
 
