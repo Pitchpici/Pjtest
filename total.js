@@ -348,7 +348,7 @@ var yelpObject;
               console.log("The read failed: " + errorObject.code);
         });
 
-}); //close submit button
+// }); //close submit button
 
 //button
 });
